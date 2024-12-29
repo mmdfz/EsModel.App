@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlueByte.SOLIDWORKS.SDK.Core</name>
+    </assembly>
+    <members>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.BillOfMaterials.BOMSettings">
+            <summary>
+            BOM Settings
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.BillOfMaterials.BOMSettings.IgnoreVirtualComponents">
+            <summary>
+            Gets or sets a value indicating whether [ignore virtual components].
+            </summary>
+            <value>
+              <c>true</c> if [ignore virtual components]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.BillOfMaterials.BOMSettings.IgnoreBOMExcludedComponents">
+            <summary>
+            Gets or sets a value indicating whether [ignore bom excluded components].
+            </summary>
+            <value>
+              <c>true</c> if [ignore bom excluded components]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.BillOfMaterials.BOMSettings.IgnoreEnvelopeComponents">
+            <summary>
+            Gets or sets a value indicating whether [ignore envelope components].
+            </summary>
+            <value>
+              <c>true</c> if [ignore envelope components]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager">
+            <summary>
+            Custom property manager
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.CustomPropertyChanged">
+            <summary>
+            Occurs when [custom property changed].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.CustomPropertyAdded">
+            <summary>
+            Occurs when [custom property added].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.CustomPropertyDeleted">
+            <summary>
+            Occurs when [custom property deleted].
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.GetNames(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument,System.String)">
+            <summary>
+            Gets the property names from the specified configuration. Get custom properties if <paramref name="configurationName"/> is ignored. 
+            </summary>
+            <param name="doc">Document</param>
+            <param name="configurationName">Name of the configuration.</param>
+            <returns>Array of property names</returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.Set(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument,System.String,System.Object,System.String)">
+            <summary>
+            Sets the specified custom property in the specified document.
+            </summary>
+            <param name="doc">The document.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="value">The value.</param>
+            <param name="configurationName"></param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.Delete(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument,System.String,System.String)">
+            <summary>
+            Deletes the specified property in the specified document.
+            </summary>
+            <param name="doc">The document.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="configurationName">Name of the configuration.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.AddSafe(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument,System.String,System.Object,SolidWorks.Interop.swconst.swCustomInfoType_e,System.String)">
+            <summary>
+            Adds the specified property in the specified document safely.
+            </summary>
+            <param name="doc">The document.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="value">The value.</param>
+            <param name="dataType">Type of the data.</param>
+            <param name="configurationName">Name of the configuration.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Assembly.#ctor(SolidWorks.Interop.sldworks.ModelDoc2,System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.Assembly"/> class.
+            </summary>
+            <param name="doc">The document.</param>
+            <param name="fullFileName">Full name of the file.</param>
+            <param name="isRoot">if set to <c>true</c> [is root].</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Assembly.Initialize(System.String)">
+            <summary>
+            Initializes the assembly hierarchy.
+            </summary>
+            <param name="referencedConfiguration">The referenced configuration.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Assembly.TraverseAndDo(System.Action{BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent})">
+            <summary>
+            Traverses the assembly component tree and do.
+            </summary>
+            <param name="doAction">The do action.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.Component.AddChild(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Adds the child.
+            </summary>
+            <param name="child">The child.</param>
+            <exception cref="T:System.ArgumentNullException">child</exception>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.Component.RemoveChild(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Adds the child.
+            </summary>
+            <param name="child">The child.</param>
+            <exception cref="T:System.ArgumentNullException">child</exception>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.ComponentAddedEventArgs.Component">
+            <summary>
+            Gets or sets the component.
+            </summary>
+            <value>
+            The component.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.ComponentAddedEventArgs.New(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            News this class.
+            </summary>
+            <param name="e">The e.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.ComponentRemovedEventArgs">
+            <summary>
+            Component removed event 
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.ComponentRemovedEventArgs.Component">
+            <summary>
+            Gets or sets the component.
+            </summary>
+            <value>
+            The component.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.ComponentRemovedEventArgs.New(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            News this class.
+            </summary>
+            <param name="e">The e.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent">
+            <summary>
+            Component interface.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.GetComponentType">
+            <summary>
+            Gets the type of the component.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.Parent">
+            <summary>
+            Gets or sets the parent.
+            </summary>
+            <value>
+            The parent.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.ComponentReference">
+            <summary>
+            Gets or sets the component reference.
+            </summary>
+            <value>
+            The component reference.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.Children">
+            <summary>
+            Gets or sets the children.
+            </summary>
+            <value>
+            The children.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.PathName" -->
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.AddChild(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Adds the child.
+            </summary>
+            <param name="child">The child.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.RemoveChild(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Removes the child.
+            </summary>
+            <param name="child">The child.</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.IsVirtual">
+            <summary>
+            Gets or sets a value indicating whether this instance is virtual.
+            </summary>
+            <value>
+              <c>true</c> if this instance is virtual; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.SuppressionState">
+            <summary>
+            Gets or sets the state of the suppression.
+            </summary>
+            <value>
+            The state of the suppression.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.Document">
+            <summary>
+            Gets or sets the document.
+            </summary>
+            <value>
+            The document.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.ReferencedConfiguration">
+            <summary>
+            Gets or sets the referenced configuration.
+            </summary>
+            <value>
+            The referenced configuration.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.IsPatternInstance">
+            <summary>
+            Gets or sets a value indicating whether this instance is pattern instance.
+            </summary>
+            <value>
+              <c>true</c> if this instance is pattern instance; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.IsSpeedPak">
+            <summary>
+            Gets or sets a value indicating whether this instance is speed pak.
+            </summary>
+            <value>
+              <c>true</c> if this instance is speed pak; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.IsEnvelope">
+            <summary>
+            Gets or sets a value indicating whether this instance is envelope.
+            </summary>
+            <value>
+              <c>true</c> if this instance is envelope; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.ExcludedFromBOM">
+            <summary>
+            Gets or sets a value indicating whether [excluded from bom].
+            </summary>
+            <value>
+              <c>true</c> if [excluded from bom]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.IsSmartComponent">
+            <summary>
+            Gets or sets a value indicating whether this instance is smart component.
+            </summary>
+            <value>
+              <c>true</c> if this instance is smart component; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.UnsafeObject">
+            <summary>
+            Gets or sets the unsafe object.
+            </summary>
+            <value>
+            The unsafe object.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.GetNameRelativeTo(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Gets the name relative to.
+            </summary>
+            <param name="rootComponent">The root component.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.GetSelectionRelativeTo(BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent)">
+            <summary>
+            Gets the selection relative to.
+            </summary>
+            <param name="rootComponent">The root component.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent.Initialize">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Drawing.#ctor(SolidWorks.Interop.sldworks.ModelDoc2,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.Assembly"/> class.
+            </summary>
+            <param name="doc">The document.</param>
+            <param name="fullFileName">Full name of the file.</param>
+            <param name="isRoot">if set to <c>true</c> [is root].</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IAssembly.RootComponent">
+            <summary>
+            Gets or sets the root component.
+            </summary>
+            <value>
+            The root component.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IAssembly.Initialize(System.String)">
+            <summary>
+            Initializes the assembly hierarchy.
+            </summary>
+            <param name="referencedConfiguration">The referenced configuration.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IAssembly.TraverseAndDo(System.Action{BlueByte.SOLIDWORKS.SDK.Core.Documents.Components.IComponent})">
+            <summary>
+            Traverses the assembly and do.
+            </summary>
+            <param name="doAction">The do action.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IAssembly.GetQuantitiedReferences(BlueByte.SOLIDWORKS.SDK.Core.BillOfMaterials.BOMSettings)">
+            <summary>
+            Gets the quantitied references.
+            </summary>
+            <param name="bomSettings">The bom settings.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager">
+            <summary>
+            Document Management class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActivateDocument(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument)">
+            <summary>
+            Activates the document. This uses <see cref="!:SldWorks.ActivateDoc3"/>/
+            </summary>
+            <param name="doc">The document.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActivateDocument2(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument)">
+            <summary>
+            Activates the document while suppressing warning dialogs.
+            </summary>
+            <param name="doc">The document.</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActiveDocument">
+            <summary>
+            Gets the active document. This property implements <see cref="!:INotifyPropertyChanged"/>
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.GetDocuments">
+            <summary>
+            Gets an array the open loaded and visible documents.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.DocumentGotClosed">
+            <summary>
+            Occurs when [document got closed]. 
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActiveDocumentChanged">
+            <summary>
+            Occurs when <see cref="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActiveDocument"/> changes. The argument e might be null if there is no active document.
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.DocumentGotCreated">
+            <summary>
+            Occurs when [document got created].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.DocumentGotOpened">
+            <summary>
+            Occurs when [document got opened].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.DocumentAboutToBeSavedAs">
+            <summary>
+            Occurs when [document about to be saved as].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.ActiveDocumentRebuilt">
+            <summary>
+            Occurs when [active document is rebuilt].
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.AddUnloadedDocument(System.String)">
+            <summary>
+            Adds an unloaded document. i.e. document is a suppressed reference of another document. For example: suppressed component in an assembly.
+            </summary>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.AttachEventHandlers">
+            <summary>
+            Attaches the event handlers.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.DettachEventHandlers">
+            <summary>
+            Dettaches the event handlers.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.Dispose">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.GetDocumentFromUnsafeObject(System.Object)">
+            <summary>
+            Gets the document from unsafe object.
+            </summary>
+            <param name="unsafeObject">The unsafe object.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager.InitializeWithPreloadedDocuments">
+            <summary>
+            Loads the existing documents. Calls this after creating an instance of this class to load existing documents.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.ModelDoc2Helper.GetTitle2(SolidWorks.Interop.sldworks.ModelDoc2)">
+            <summary>
+            Gets the title2.
+            </summary>
+            <param name="modelDoc2">The model doc2.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Document.Refresh">
+            <summary>
+            Gets or sets the solidworks object.
+            </summary>
+            <value>
+            The solidworks object.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.Document.ShowConfiguration(System.String)">
+            <summary>
+            Shows the specified configuration.
+            </summary>
+            <param name="configurationName"></param>
+            <exception cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException">
+            Cannot show configuration {configurationName} because document {this.FileName} is not loaded.
+            or
+            Configuration {configurationName} does exit in {this.FileName}.
+            or
+            Unsafe object failed to show configuration.
+            </exception>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.DocumentManager.ActivateDocument(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument)">
+            <summary>
+            Activates the document. This uses <see cref="!:SldWorks.ActivateDoc3"/>/
+            </summary>
+            <param name="doc">The document.</param>
+            <exception cref="T:System.ArgumentNullException">doc</exception>
+            <exception cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"></exception>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.DocumentManager.ActivateDocument2(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument)">
+            <summary>
+            Activates the document while suppressing warning dialogs.
+            </summary>
+            <param name="doc">The document.</param>
+            <exception cref="T:System.ArgumentNullException">doc</exception>
+            <exception cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"></exception>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.DocumentManager.Refresh(SolidWorks.Interop.sldworks.SldWorks)">
+            <summary>
+            Refreshes the specified sw application.
+            </summary>
+            <param name="swApp">The sw application.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.DocumentManager.InitializeWithPreloadedDocuments">
+            <summary>
+            Initializes this instance.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument">
+            <summary>
+            Document object.
+            </summary>
+            <seealso cref="T:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSObject" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.CustomPropertyChanged">
+            <summary>
+            Occurs when [custom property changed].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.CustomPropertyAdded">
+            <summary>
+            Occurs when [custom property added].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.CustomPropertyDeleted">
+            <summary>
+            Occurs when [custom property deleted].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Rebuilt">
+            <summary>
+            Occurs when the document feature tree is rebuilt.
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.DocumentType">
+            <summary>
+            Gets or sets the type of the document.
+            </summary>
+            <value>
+            The type of the document.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.CustomPropertyManager">
+            <summary>
+            Gets the custom property manager.
+            </summary>
+            <value>
+            The custom property manager.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.IsVisible">
+            <summary>
+            Gets a value indicating whether this document is visible.
+            </summary>
+            <value>
+              <c>true</c> if this document is visible; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.FileName">
+            <summary>
+            Gets the name of the file.
+            </summary>
+            <value>
+            The name of the file.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.ActiveConfigurationName">
+            <summary>
+            Gets or sets the name of the active configuration.
+            </summary>
+            <value>
+            The name of the active configuration.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.IsLoaded">
+            <summary>
+            Gets a value indicating whether this document is loaded.
+            </summary>
+            <value>
+              <c>true</c> if this document is loaded; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.GotClosed">
+            <summary>
+            Occurs when [got closed].
+            </summary>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.BeforeSavedAs">
+            <summary>
+            Occurs when [before saved as].
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.AttachEventHandlers">
+            <summary>
+            Attaches the event handlers.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Load(System.Object)">
+            <summary>
+            Loads the specified unsafe object.
+            </summary>
+            <param name="UnsafeObject">The unsafe object.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.DettachEventHandlers">
+            <summary>
+            Dettaches the event handlers.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Refresh">
+            <summary>
+            Refreshes this document.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Equals(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument)">
+            <summary>
+            Equalses the specified document.
+            </summary>
+            <param name="doc">The document.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Equals(System.String)">
+            <summary>
+            Equalses the specified document.
+            </summary>
+            <param name="filename">filename.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.ShowConfiguration(System.String)">
+            <summary>
+            Shows the specified configuration.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument.Save(BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e)">
+            <summary>
+            Saves the current document. True if saved, false if not. 
+            </summary>
+            <param name="extensions">Extensions. Enum supports flags.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e">
+            <summary>
+            File extension. Supports bitmask. Use <see cref="M:System.Enum.HasFlag(System.Enum)"/> to check if the member for the desired extension is included/
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.Default">
+            <summary>
+            Save documents to one of the three SOLIDWORKS document types depending on the model type.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.sldprt">
+            <summary>
+            SOLIDWORKS part document.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.sldasm">
+            <summary>
+            SOLIDWORKS assembly document.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.slddrw">
+            <summary>
+            SOLIDWORKS drawing document.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.stp">
+            <summary>
+            STP file.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.x_t">
+            <summary>
+            Parasolid file.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.pdf">
+            <summary>
+            PDF.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.FileExtension_e.igs">
+            <summary>
+            IGS
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Enums.HRESULT">
+            <summary>
+            HRESult
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.HRESULT.S_OK">
+            <summary>
+            OK
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.Core.Enums.HRESULT.S_False">
+            <summary>
+            False
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Globals">
+            <summary>
+            Globals 
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Globals.DocumentManager">
+            <summary>
+            Gets or sets the document manager.
+            </summary>
+            <value>
+            The document manager.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Globals.Application">
+            <summary>
+            Gets or sets the application.
+            </summary>
+            <value>
+            The application.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication">
+            <summary>
+            Wrapper over the <see cref="T:SolidWorks.Interop.sldworks.SldWorks"/> application.
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.UnSafeObject">
+            <summary>
+            Gets or sets the unsafe object.
+            </summary>
+            <value>
+            The un safe object.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.As``1">
+            <summary>
+            Casts the unsafe object as the specified type.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.SendWarningMessage(System.String)">
+            <summary>
+            Sends the warning message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.SendErrorMessage(System.String)">
+            <summary>
+            Sends the error message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.SendInformationMessage(System.String)">
+            <summary>
+            Sends the information message.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.GetLastSaveErrorMessage">
+            <summary>
+            Gets the last save error message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication.GetRecentErrors">
+            <summary>
+            Gets the last 20 error message.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Models.Stuple`2">
+            <summary>
+            Tuple with settable properties. I know it's not cool.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Models.Stuple`2.Item1">
+            <summary>
+            Gets or sets the item1.
+            </summary>
+            <value>
+            The item1.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Models.Stuple`2.Item2">
+            <summary>
+            Gets or sets the item2.
+            </summary>
+            <value>
+            The item2.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Models.Stuple`2.#ctor(`0,`1)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Models.Stuple`2"/> class.
+            </summary>
+            <param name="item1">The item1.</param>
+            <param name="item2">The item2.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs">
+            <summary>
+            Save As EventArgs
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs.Handled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs"/> is handled.
+            </summary>
+            <value>
+              <c>true</c> if handled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>
+            The name of the file.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs.Document">
+            <summary>
+            Gets or sets the document.
+            </summary>
+            <value>
+            The document.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.SaveEventArgs.New(BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocument,System.String)">
+            <summary>
+            News the specified document.
+            </summary>
+            <param name="document">The document.</param>
+            <param name="fileName">Name of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject">
+            <summary>
+            Base wrapper class for SOLIDWORKS object.
+            </summary>
+            <seealso cref="T:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSObject" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject.UnSafeObject">
+            <summary>
+            Gets or sets the unsafe object.
+            </summary>
+            <value>
+            The un safe object.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject.As``1">
+            <summary>
+            Casts this instance.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="E:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject.PropertyChanged">
+            <summary>
+            Occurs when a property value changes.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject.Flush">
+            <summary>
+            Flushes this instance.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.CustomProperties.ChangeType">
+            <summary>
+            Change type.
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.CustomProperties.ChangeType.Add">
+            <summary>
+            Add
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.CustomProperties.ChangeType.Change">
+            <summary>
+            Change
+            </summary>
+        </member>
+        <member name="F:BlueByte.SOLIDWORKS.SDK.CustomProperties.ChangeType.Delete">
+            <summary>
+            Delete
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs">
+            <summary>
+            Encapsulates the changes of a custom property.
+            </summary>
+            <seealso cref="T:System.EventArgs" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.ChangeType">
+            <summary>
+            Gets the type of the change.
+            </summary>
+            <value>
+            The type of the change.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.Document">
+            <summary>
+            Gets the document.
+            </summary>
+            <value>
+            The document.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.ConfigurationName">
+            <summary>
+            Gets the name of the configuration.
+            </summary>
+            <value>
+            The name of the configuration.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.PropertyName">
+            <summary>
+            Gets the name of the property.
+            </summary>
+            <value>
+            The name of the property.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.NewValue">
+            <summary>
+            gets the new value.
+            </summary>
+            <value>
+            The new value.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.OldValue">
+            <summary>
+            Gets the old value.
+            </summary>
+            <value>
+            The old value.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs.Handled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:BlueByte.SOLIDWORKS.SDK.CustomProperties.CustomPropertyChangedEventArgs"/> is handled.
+            </summary>
+            <value>
+              <c>true</c> if handled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException">
+            <summary>
+            Identity exception. This exception occurs when <see cref="!:AddInBase"/> fails to read the identity attributes.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException">
+            <summary>
+            Exception throwing by the Blue Byte Systems SOLIDWORKS SDK.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (<see langword="Nothing" /> in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:SaveRet">
+            <summary>
+            Save operation result.
+            </summary>
+        </member>
+        <member name="P:SaveRet.Extension">
+            <summary>
+            Gets or sets the extension.
+            </summary>
+            <value>
+            The extension.
+            </value>
+        </member>
+        <member name="P:SaveRet.Success">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:SaveRet"/> is success.
+            </summary>
+            <value>
+              <c>true</c> if success; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:SaveRet.Errors">
+            <summary>
+            Gets or sets the errors.
+            </summary>
+            <value>
+            The errors.
+            </value>
+        </member>
+        <member name="P:SaveRet.Warnings">
+            <summary>
+            Gets or sets the warnings.
+            </summary>
+            <value>
+            The warnings.
+            </value>
+        </member>
+        <member name="M:SaveRet.GetErrors">
+            <summary>
+            Gets the error.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:SaveRet.GetWarning">
+            <summary>
+            Gets the warning messages.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+    </members>
+</doc>

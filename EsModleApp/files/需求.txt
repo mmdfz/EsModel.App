@@ -1,0 +1,20 @@
+基于Solidworks软件，Add-in插件开发需求：
+1.在Solidworks工具栏中增加插件入口，名称为“至易测试”；
+2.插件中增加任意窗体，运行后在Solidworks中可加载即可；
+3.Solidworks库已经在项目中注入，其他库文件路径：\bin\Debug\sldworks_dll
+
+期望结果：
+1.程序可正常调试运行；
+2.运行后在Solidworks可成功加载插件窗体；
+
+开发环境：
+1.Visual studio 2022或更低版本；
+2.Solidworks 2022或更低版本；
+
+测试：
+1.如果需要Solidworks环境进行测试，请提前预约，预计远程测试服务器可使用1h左右；
+2.如需远程测试，请提前安装向日葵远程桌面工具；
+
+可参考资料：
+1.开源程序：https://github.com/AmenJlili/power-sm/tree/master
+2.Solidworks API：https://help.solidworks.com/2022/english/api/sldworksapiprogguide/Welcome.htm

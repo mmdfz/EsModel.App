@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BlueByte.SOLIDWORKS.SDK</name>
+    </assembly>
+    <members>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.IgnoreUI">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.IgnoreUI.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.IgnoreUI"/> class.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute">
+            <summary>
+            SOLIDWORKS PopupMenu. This menu appears when you right-clicks on an entity in the 3D area or the feature tree.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.#ctor(System.String,SolidWorks.Interop.swconst.swDocumentTypes_e,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute" /> class.
+            </summary>
+            <param name="menuText">The menu text.</param>
+            <param name="docTypes">The document types.</param>
+            <param name="callback">The callback.</param>
+            <param name="customNames">Custom names for selection types. Semi-colon separated list of the names of the custom feature types; this argument is applicable only if SelectType is a custom feature type (like swSelATTRIBUTES); in the case of swSelATTRIBUTES, set this field to the name of the attribute definition</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.#ctor(System.String,SolidWorks.Interop.swconst.swDocumentTypes_e,SolidWorks.Interop.swconst.swSelectType_e,System.String,System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute" /> class.
+            </summary>
+            <param name="menuText">The menu text.</param>
+            <param name="docTypes">The document types.</param>
+            <param name="callback">The callback.</param>
+            <param name="menuEnable">Menu enable method name</param>
+            <param name="type">Entity to select</param>
+            <param name="customNames">customNames</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.DocumentType">
+            <summary>
+            Document type to which to add the menu item as defined by swDocumentTypes_e.
+            </summary>
+            <value>
+            The type of the document.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.Text" -->
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.Position">
+            <summary>
+            Gets or sets the position. Position where to add the new menu item; the first item is position 0; if -1 is specified for Position, then the new menu item is added to the bottom of the list; this argument specifies the position of the menu item in relation to its immediate parent menu.
+            </summary>
+            <value>
+            The position.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.Callback">
+            <summary>
+            Gets or sets the callback.
+            </summary>
+            <value>
+            The callback.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.MenuEnableState">
+            <summary>
+            Gets or sets the method that enables the state of the menu.
+            </summary>
+            <value>
+            The state of the menu enable.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.Hint">
+            <summary>
+            Gets or sets the hint.
+            </summary>
+            <value>
+            The hint.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.CustomNames">
+            <summary>
+            Gets or sets the custom names. Semi-colon separated list of the names of the custom feature types; this argument is applicable only if SelectType is a custom feature type (like swSelATTRIBUTES); in the case of swSelATTRIBUTES, set this field to the name of the attribute definition
+            </summary>
+            <value>
+            The custom names.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.PopMenuItemAttribute.SelectionType">
+            <summary>
+            Gets or sets the type of the selection.
+            </summary>
+            <value>
+            The type of the selection.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute">
+            <summary>
+            SOLIDWORKS Menu.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.#ctor(System.String,SolidWorks.Interop.swconst.swDocumentTypes_e,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute" /> class. Add images to the project level and set their build action to embed resource. Size is 20x20, 32x32, 40x40, 64x64, 96x96 or 128x128.
+            </summary>
+            <param name="menuText">The menu text.</param>
+            <param name="docTypes">The document types.</param>
+            <param name="isTopLevelMenu">True if the item is a top level menu, false, if it is a menu item</param>
+            <param name="callback">The callback.</param>
+            <param name="bmpFileNameInResources">name of the bmp in the resources of the add-in project including the bmp extension.</param> 
+            <remarks>Add images to the project level and set their build action to embed resource. Size is 20x20, 32x32, 40x40, 64x64, 96x96 or 128x128</remarks>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.IsTopLevelMenu">
+            <summary>
+            Gets or sets a value indicating whether this instance is menu item.
+            </summary>
+            <value>
+              <c>true</c> if this instance is menu item; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.DocumentType">
+            <summary>
+            Document type to which to add the menu item as defined by swDocumentTypes_e.
+            </summary>
+            <value>
+            The type of the document.
+            </value>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.Text" -->
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.Position">
+            <summary>
+            Gets or sets the position. Position where to add the new menu item; the first item is position 0; if -1 is specified for Position, then the new menu item is added to the bottom of the list; this argument specifies the position of the menu item in relation to its immediate parent menu.
+            </summary>
+            <value>
+            The position.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.Callback">
+            <summary>
+            Gets or sets the callback.
+            </summary>
+            <value>
+            The callback.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.MenuEnableState">
+            <summary>
+            Gets or sets the method that enables the state of the menu.
+            </summary>
+            <value>
+            The state of the menu enable.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.Hint">
+            <summary>
+            Gets or sets the hint.
+            </summary>
+            <value>
+            The hint.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Menus.MenuItemAttribute.BmpFileNameInResources">
+            <summary>
+            Gets or sets the image list. Array of strings for the paths for the image files for the menu item. Add your bmps to the resources of the add-in project. Add images to the project level and set their build action to embed resource. Size is 20x20, 32x32, 40x40, 64x64, 96x96 or 128x128.
+            </summary>
+            <value>
+            The image list.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.IconAttribute">
+            <summary>
+            Icon file name.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.IconAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.IconAttribute"/> class.
+            </summary>
+            <param name="iconPath">icon Path.</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.IconAttribute.IconFileName">
+            <summary>
+            File name of the icon. The icon must be in the same folder as the assembly of your add-in. Size is 16x16
+            </summary>
+            <value>
+            Full path to the icon.
+            </value>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.AttributeHelper">
+            <summary>
+            AttributeHelper. Internal use.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.Description">
+            <summary>
+            Add-in description.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.Description.AddInDescription">
+            <summary>
+            Gets or sets the add in description.
+            </summary>
+            <value>
+            The add in description.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.Description.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.Description"/> class.
+            </summary>
+            <param name="Description">The description.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.NameAttribute">
+            <summary>
+            Add-in name.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.NameAttribute.AddInName">
+            <summary>
+            Gets or sets the name of the add in.
+            </summary>
+            <value>
+            The name of the add in.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.NameAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.NameAttribute"/> class.
+            </summary>
+            <param name="name">The name.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Attributes.StartUp">
+            <summary>
+            Enables or disables add-in during SOLIDWORKS startup.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Attributes.StartUp.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.StartUp"/> is enabled.
+            </summary>
+            <value>
+              <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Attributes.StartUp.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Attributes.StartUp"/> class.
+            </summary>
+            <param name="enabled">if set to <c>true</c> [enabled].</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.AddInBase">
+            <summary>
+            Base Add-in class. Make sure you decorate your class with <see cref="T:System.Runtime.InteropServices.GuidAttribute"/> and make it COM-Visible with <see cref="T:System.Runtime.InteropServices.ComVisibleAttribute"/>
+            </summary>
+            <seealso cref="T:SolidWorks.Interop.swpublished.ISwAddin" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.AttachDebugger">
+            <summary>
+            Attaches the debugger.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.StaticDebugger">
+            <summary>
+            Attaches the debugger.
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.DocumentManager">
+            <summary>
+            Gets the document manager.
+            </summary>
+            <value>
+            The document manager.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.CustomPropertyManager">
+            <summary>
+            Gets the custom property manager.
+            </summary>
+            <value>
+            The custom property manager.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Application">
+            <summary>
+            Gets the application.
+            </summary>
+            <value>
+            The application.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Cookie">
+            <summary>
+            Gets the cookie.
+            </summary>
+            <value>
+            The cookie.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Identity">
+            <summary>
+            Gets the identity.
+            </summary>
+            <value>
+            The identity.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Container">
+            <summary>
+            Gets the DI container. SimpleInjector.
+            </summary>
+            <value>
+            The container.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Logger">
+            <summary>
+            Gets the logger.
+            </summary>
+            <value>
+            The logger.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.LoggerType">
+            <summary>
+            Sets the type of the logger to be used.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.AddInBase"/> class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnLoggerOutputSat(System.String)">
+            <summary>
+            Sets the output folder of the logger.
+            </summary>
+            <param name="defaultDirectory"></param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.RegisterTypes(SimpleInjector.Container)">
+            <summary>
+            Registers additional types.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.IsInitialized">
+            <summary>
+            Gets or sets a value indicating whether this instance is initialized.
+            </summary>
+            <value>
+              <c>true</c> if this instance is initialized; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.Initialize">
+            <summary>
+            Initializes task (Registers types and creates logger).
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnLoggerTypeChosen(BlueByte.SOLIDWORKS.SDK.Diagnostics.LoggerType_e)">
+            <summary>
+            Sets the type of the logger.
+            </summary>
+            <param name="defaultType"></param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnLoadAdditionalAssemblies(System.IO.DirectoryInfo)">
+            <summary>
+            Load assemblies that failed loading.
+            </summary>
+            <param name="addinDirectory">Directory of the add-in.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnConnectToSOLIDWORKS(SolidWorks.Interop.sldworks.SldWorks)">
+            <summary>
+            Connects to SOLIDWORKS.
+            </summary>
+            <param name="swApp">The sw application.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.RegisterTypes">
+            <summary>
+            Fires when the application is initialized. Register types of calling assembly.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.RegisterDefaultTypes">
+            <summary>
+            Registers the default types. Register as singletons both <see cref="T:SolidWorks.Interop.sldworks.SldWorks"/> and <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager"/>
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.CreateDefaultTypesInstances">
+            <summary>
+            Creates the default types instances namely <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Documents.IDocumentManager"/> and <see cref="T:SolidWorks.Interop.sldworks.ICustomPropertyManager"/>
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.GetAddInDirectory(System.Type)">
+            <summary>
+            Gets the add-in directory from the assembly of the add-in. 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.GetAddInDirectory">
+            <summary>
+            Gets the add-in directory.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnAddInPreClose">
+            <summary>
+            Called before add-in is closed.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.DisconnectFromSW">
+            <summary>
+            Disconnects from SOLIDWORKS. Do not call this method. Override <see cref="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnDisconnectFromSOLIDWORKS"/> and <see cref="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnAddInPreClose"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.AddInBase.OnDisconnectFromSOLIDWORKS">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSApplication">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:BlueByte.SOLIDWORKS.SDK.Core.SOLIDWORKSObject" />
+            <seealso cref="T:BlueByte.SOLIDWORKS.SDK.Core.ISOLIDWORKSApplication" />
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.CustomPropertyManager">
+            <summary>
+            Custom property manager. For internal use. Please use <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager"/>
+            </summary>
+            <seealso cref="T:BlueByte.SOLIDWORKS.SDK.Core.CustomProperties.ICustomPropertyManager" />
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Core.Identity">
+            <summary>
+            Add-in Identity. This includes the name, description and the startup settings of the add-in.
+            </summary>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Identity.Name">
+            <summary>
+            Gets the name.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Identity.Description">
+            <summary>
+            Gets the description.
+            </summary>
+            <value>
+            The description.
+            </value>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Core.Identity.Enabled">
+            <summary>
+            Gets a value indicating whether this <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.Identity"/> is enabled.
+            </summary>
+            <value>
+              <c>true</c> if enabled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Core.Identity.Get(System.Object)">
+            <summary>
+            Gets the specified addin.
+            </summary>
+            <param name="addin">The addin.</param>
+            <returns></returns>
+            <exception cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException">
+            Addin class is not decorated with NameAttribute. - null
+            or
+            Addin add-in has an empty name. - null
+            or
+            Addin class is not decorated with DescriptionAttribute. - null
+            or
+            Addin add-in has an empty description. - null
+            </exception>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger">
+            <summary>
+            Logger.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.StartConnection">
+            <summary>
+            Starts a connection with the SQL server. Call this method after you call <see cref="!:Init(Identity, IEdmTaskInstance, string)"/>.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.EndConnection">
+            <summary>
+            Ends the connection with the SQLServer
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.GetLoggerType">
+            <summary>
+            Returns the type of the logger.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.LogToOutput(System.String,System.String)">
+            <summary>
+            Logs value to output.
+            </summary>
+            <param name="target">Text file path. This is the name of the table when <see cref="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.GetLoggerType"/> returns <see cref="F:BlueByte.SOLIDWORKS.SDK.Diagnostics.LoggerType_e.SQL"/></param>
+            <param name="value">New value.</param>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.OutputLocation">
+            <summary>
+            Ouput location. Relative path does not work.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.ILogger.Init(BlueByte.SOLIDWORKS.SDK.Core.Identity,System.String)">
+            <summary>
+            Initialize the logger.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="identity">The identity struct.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Diagnostics.LoggerBase">
+            <summary>
+            Base class for all loggers.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.LoggerBase.GetLoggerType">
+            <summary>
+            Gets the type of the logger.
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.Exception">Could not infer type of logger. Make sure to choose the logger type.</exception>
+        </member>
+        <member name="P:BlueByte.SOLIDWORKS.SDK.Diagnostics.SQLLogger.ConnectionString">
+            <summary>
+            Gets the connection string.
+            </summary>
+            <value>
+            The connection string.
+            </value>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.SQLLogger.StartConnection">
+            <summary>
+            Starts the connection.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.SQLLogger.EndConnection">
+            <summary>
+            Ends the connection.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Diagnostics.SQLLogger.SetConnectionString(System.String)">
+            <summary>
+            Sets the connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException">
+            <summary>
+            Exception throwing by the Blue Byte Systems SOLIDWORKS SDK.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or a null reference (<see langword="Nothing" /> in Visual Basic) if no inner exception is specified.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.SOLIDWORKSSDKException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException">
+            <summary>
+            Identity exception. This exception occurs when <see cref="T:BlueByte.SOLIDWORKS.SDK.Core.AddInBase"/> fails to read the identity attributes.
+            </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="message">The message that describes the error.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:BlueByte.SOLIDWORKS.SDK.Exceptions.IdentityInfoException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.UI.TaskPaneHelper">
+            <summary>
+            Taskpane helper class.
+            </summary>
+        </member>
+        <member name="M:BlueByte.SOLIDWORKS.SDK.UI.TaskPaneHelper.BuildTaskPane(SimpleInjector.Container,System.String,System.String)">
+            <summary>
+            Builds the task pane.
+            </summary>
+            <param name="TaskPaneProgID">The task pane prog identifier.</param>
+            <param name="taskPaneTitle">The task pane title.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException">taskPaneTitle</exception>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.UI.ITaskPane">
+            <summary>
+            Task pane.
+            </summary>
+        </member>
+        <member name="T:BlueByte.SOLIDWORKS.SDK.UI.WindowsHelper">
+            <summary>
+            Windows API helper. For internal use only.
+            </summary>
+        </member>
+    </members>
+</doc>
